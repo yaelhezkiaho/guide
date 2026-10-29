@@ -63,13 +63,15 @@
       <h1>לפני שהוא<br>שואל את <span>הצ'אט</span></h1>
       <div class="sub">10 שאלות שפותחות שיחה עם מתבגר<br>ומה הצ'אט נותן לו, שגם את יכולה</div>
 
-      <!-- PLACEHOLDER until the Rav Messer embed code arrives: nothing is saved or sent, it only opens thanks.html.
-           Replace this <form> with the Rav Messer form (its list, redirect after signup to thanks.html). -->
-      <form id="signup" action="thanks.html" method="get" onsubmit="location.href='thanks.html';return false;">
+      <!-- Rav Messer form 2894699 (list "ניוזלטר איך כן"), redirects to thanks.html after signup.
+           Field names, form_id and action come from the Rav Messer embed code (2026-10-29); the look is ours. -->
+      <form id="signup" method="post" action="https://subscribe.responder.co.il" accept-charset="utf-8">
         <label for="name">השם שלך</label>
-        <input id="name" name="name" type="text" autocomplete="given-name" required>
+        <input id="name" name="fields[subscribers_name]" type="text" autocomplete="given-name" dir="rtl" required>
         <label for="email">המייל שלך</label>
-        <input id="email" name="email" type="email" autocomplete="email" dir="ltr" required>
+        <input id="email" name="fields[subscribers_email]" type="email" autocomplete="email" dir="ltr" required>
+        <input type="hidden" name="form_id" value="2894699">
+        <input type="hidden" name="encoding" value="utf-8">
         <button type="submit">שלחי לי את המדריך</button>
         <div class="fine">המדריך יגיע אלייך מיד, ואיתו מכתב קצר ממני פעם בשבוע. אפשר להסיר בכל רגע</div>
       </form>
